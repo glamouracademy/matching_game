@@ -1,8 +1,4 @@
-var red;
-var green;
-var blue;
 var rgbColor;
-
 var piece;
 
 function setPieceColor(rgbColor) {
@@ -17,16 +13,22 @@ function addPiece(piece) {
 	piece.style.backgroundColor = rgbColor;
 }
 
+//create random color
+function createRandomColor() {
+	var red = Math.floor(Math.random() * 256 );
+	var green = Math.floor(Math.random() * 256 );
+	var blue = Math.floor(Math.random() * 256 );
+	rgbColor = 'rgb(' + red + ',' + green + ',' + blue + ')';	
+}
 
-red = Math.floor(Math.random() * 256 );
-green = Math.floor(Math.random() * 256 );
-blue = Math.floor(Math.random() * 256 );
-rgbColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
 
+//create a piece
 
 piece = document.createElement("div");
 piece.className = "piece";
 
+
+createRandomColor();
 
 setPieceColor(rgbColor);
 addPiece(piece);
