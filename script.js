@@ -23,12 +23,12 @@ function createRandomColor() {
 
 
 //create a piece
-
-piece = document.createElement("div");
-piece.className = "piece";
-
+function createDiv() {
+	piece = document.createElement("div");
+	piece.className = "piece";
+}
 
 createRandomColor();
-
+createDiv();
 setPieceColor(rgbColor);
 addPiece(piece);
