@@ -1,0 +1,32 @@
+
+/* fonts */
+
+h1,
+h2,
+h3,
+p {
+font-family: 'Arimo', sans-serif;
+}
+
+/* overall styles */
+
+body {
+	padding: 2rem;
+}
+
+
+
+/* piece */
+
+h1,
+p,
+.piece {
+	text-align: center;
+}
+
+.piece {
+	width: 200px;
+	height: 200px;
+	background: tomato;
+	margin: 0 auto;
+}
