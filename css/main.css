@@ -27,6 +27,7 @@ p,
 .piece {
 	width: 200px;
 	height: 200px;
-	background: tomato;
+	border: 2px solid #333;
+	/*background: tomato;*/
 	margin: 0 auto;
 }
