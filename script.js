@@ -31,24 +31,36 @@ function createDiv() {
 	piece.className = "piece";
 }
 
-//ask user for input
-while (true) {
-	answer = prompt("Do the pieces match? Type Y or N.")
-	answer = answer.toUpperCase();
-	if (answer === 'Y') {
-		correctCounter += 1;
-		getTally();
-		break;
-	} else {
-		incorrectCounter += 1;
-		getTally();
-		break;
-	}
-}
+// //ask user for input
+// while (true) {
+// 	answer = prompt("Do the pieces match? Type Y or N.")
+// 	answer = answer.toUpperCase();
+// 	if (answer === 'Y') {
+// 		correctCounter += 1;
+// 		getTally();
+// 		break;
+// 	} else {
+// 		incorrectCounter += 1;
+// 		getTally();
+// 		break;
+// 	}
+// }
 
-//display tally
-function getTally() {
-	document.write("You got " + correctCounter + " correct and " + incorrectCounter + " incorrect.");
+// //display tally
+// function getTally() {
+// 	document.write("You got " + correctCounter + " correct and " + incorrectCounter + " incorrect.");
+// }
+
+
+function validateForm() {
+    var answer = document.forms["myForm"]["answer"].value;
+    if (answer == null || answer == "") {
+        alert("Take a guess!");
+        return false;
+    } else {
+    	return true;
+    	document.write("Nice one!");
+    }
 }
 	
 
