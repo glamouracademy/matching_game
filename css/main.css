@@ -4,9 +4,9 @@
 h1,
 h2,
 h3,
-p,
-form {
+p {
 font-family: 'Arimo', sans-serif;
+color: #333;
 }
 
 /* overall styles */
@@ -14,7 +14,6 @@ font-family: 'Arimo', sans-serif;
 body {
 	padding: 2rem;
 }
-
 
 
 /* piece */
@@ -28,7 +27,6 @@ p {
 	width: 200px;
 	height: 200px;
 	border: 2px solid #333;
-	/*background: tomato;*/
 	margin: 0 auto;
 }
 

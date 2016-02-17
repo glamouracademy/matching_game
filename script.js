@@ -1,8 +1,11 @@
 var rgbColor;
+var rgbColor2;
 var piece;
 var answer;
+var correctCounter = 0;
+var incorrectCounter = 0;
 
-//sets the piece color for the markup
+//sets piece color
 function setPieceColor(rgbColor) {
 	var outputDiv = document.getElementById('original');	
 	outputDiv.style.backgroundColor = rgbColor;
@@ -15,7 +18,7 @@ function addPiece(piece) {
 	piece.style.backgroundColor = rgbColor2;
 }
 
-//create random color for original
+//create random color
 function createRandomColor() {
 	var red = Math.floor(Math.random() * 256 );
 	var green = Math.floor(Math.random() * 256 );
@@ -23,53 +26,58 @@ function createRandomColor() {
 	rgbColor = 'rgb(' + red + ',' + green + ',' + blue + ')';	
 }
 
-//create random color for option
-function createRandomOptionColor() {
+//create random color
+function createRandomColor2() {
 	var red = Math.floor(Math.random() * 256 );
 	var green = Math.floor(Math.random() * 256 );
 	var blue = Math.floor(Math.random() * 256 );
 	rgbColor2 = 'rgb(' + red + ',' + green + ',' + blue + ')';	
 }
 
-//create a piece div
+//create a piece
 function createDiv() {
 	piece = document.createElement("div");
 	piece.className = "piece";
 }
 
-//board set up
+//ask user for input
+window.onload = function () {
+	answer = prompt("Do the pieces match? Type Y or N.");
+	answer = answer.toUpperCase();
+	
+	if (rgbColor === rgbColor2 && answer === 'Y') {
+		correctCounter += 1;
+		getTally(correctCounter);
+		
+	} else if (rgbColor != rgbColor2 && answer === 'N') {
+		correctCounter += 1;
+		getTally();
+		
+	} else {
+		incorrectCounter += 1;
+		getTally();	
+	}
+}
+
+
+//get results by id
+
+function getTally() {
+	var tally = document.getElementById("results");
+	tallyDiv = "<p>You got " + correctCounter + " correct and " + incorrectCounter + " incorrect.</p>";
+	tally.innerHTML = tallyDiv;
+}
+
+
+
 createRandomColor();
-createRandomOptionColor();
+createRandomColor2();
 createDiv();
 setPieceColor(rgbColor);
 addPiece(piece);
 
 
 
-
-
-// var correctCounter = 0;
-// var incorrectCounter = 0;
-
-
-// //ask user for input
-// while (true) {
-// 	answer = prompt("Do the pieces match? Type Y or N.")
-// 	answer = answer.toUpperCase();
-// 	if (answer === 'Y') {
-// 		correctCounter += 1;
-// 		getTally(correctCounter);
-// 		break;
-// 	} else {
-// 		incorrectCounter += 1;
-// 		getTally();
-// 		break;
-// 	}
-// }
-
-// function getTally() {
-// 	document.write("<p>You got " + correctCounter + " correct and " + incorrectCounter + " incorrect.</p>");
-// }
 
 
 
