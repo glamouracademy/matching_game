@@ -1,5 +1,4 @@
 var rgbColor;
-var rgbColor2;
 var piece;
 var answer;
 var correctCounter = 0;
@@ -20,32 +19,18 @@ function addPiece(piece) {
 }
 
 
+
 //loop through creating random colors
 function createRandomColor() {
-	var red = Math.floor(Math.random() * 256 );
-	var green = Math.floor(Math.random() * 256 );
-	var blue = Math.floor(Math.random() * 256 );
-	rgbColor = 'rgb(' + red + ',' + green + ',' + blue + ')';	
-	colorOptions.push(rgbColor);
+	for ( i = 1; i <= 2; i += 1 ) {
+		var red = Math.floor(Math.random() * 256 );
+		var green = Math.floor(Math.random() * 256 );
+		var blue = Math.floor(Math.random() * 256 );
+		rgbColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+		colorOptions.push(rgbColor);
+	}
+
 }
-
-
-// //create random color
-// function createRandomColor() {
-// 	var red = Math.floor(Math.random() * 256 );
-// 	var green = Math.floor(Math.random() * 256 );
-// 	var blue = Math.floor(Math.random() * 256 );
-// 	rgbColor = 'rgb(' + red + ',' + green + ',' + blue + ')';	
-// }
-
-// //create random color
-// function createRandomColor2() {
-// 	var red = Math.floor(Math.random() * 256 );
-// 	var green = Math.floor(Math.random() * 256 );
-// 	var blue = Math.floor(Math.random() * 256 );
-// 	rgbColor2 = 'rgb(' + red + ',' + green + ',' + blue + ')';	
-// }
-
 
 //create a piece
 function createDiv() {
@@ -82,7 +67,6 @@ function getTally() {
 
 
 
-createRandomColor();
 createRandomColor();
 createDiv();
 setPieceColor(rgbColor);
