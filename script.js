@@ -1,9 +1,7 @@
-var rgbColor;
-var piece;
 var answer;
 var correctCounter = 0;
 var incorrectCounter = 0;
-var colorOptions = [];
+
 
 //make a random color
 function makeRandomColor() {
@@ -35,9 +33,8 @@ function setPieceColor(randomColor) {
 //create divs for each color
 function createOptions(colors) {
 	for ( i = 1; i < colors.length; i += 1 ) {
-		//create option div
-		option = document.createElement("div");
-		option.className = "piece-style";
+
+		createOptionDiv();
 
 		//hook into markup
 		var outputOption = document.getElementById('options');
@@ -46,43 +43,22 @@ function createOptions(colors) {
 		//assign style to container div
 		var containerWidth = i * 210;
 		outputOption.style.width = containerWidth + "px";
+	}
+}
 
-		//assign styles to option divs
+//create option div with styles
+function createOptionDiv() {
+		option = document.createElement("div");
+		option.className = "piece-style";
 		option.style.float = "left";
 		option.style.margin = ".125rem";
 		option.style.backgroundColor = colors[i];
-
-	}
+		return option;
 }
 
 
 
 
-
-//adds piece to options and set background color of piece
-function addPiece(piece) {
-	var outputChoices = document.getElementById('options');
-	outputChoices.appendChild(piece);
-	piece.style.backgroundColor = colorOptions[1];
-}
-
-
-
-//loop through creating random colors
-function createRandomColor() {
-	for ( i = 0; i < 2; i += 1 ) {
-		
-		colorOptions.push(rgbColor);
-	}
-}
-
-
-
-//create a piece
-function createDiv() {
-	piece = document.createElement("div");
-	piece.className = "piece";
-}
 
 //ask user for input
 // window.onload = function () {
