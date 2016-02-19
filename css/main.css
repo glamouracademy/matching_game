@@ -15,6 +15,10 @@ body {
 	padding: 2rem;
 }
 
+footer {
+	clear: left;
+}
+
 
 /* piece */
 
@@ -23,11 +27,15 @@ p {
 	text-align: center;
 }
 
-.piece {
+.piece-style {
 	width: 200px;
 	height: 200px;
 	border: 2px solid #333;
 	margin: 0 auto;
+}
+
+#options {
+	margin: 1% auto;
 }
 
 

@@ -19,7 +19,7 @@ function makeColors() {
 	var colorOptions = [];
 	var color;
 
-	for (i = 1; i < 5; i += 1 ){
+	for (i = 1; i < 8; i += 1 ){
 		color = makeRandomColor();
 		colorOptions.push(color);
 	}
@@ -30,7 +30,29 @@ function makeColors() {
 function setPieceColor(randomColor) {
 	var outputDiv = document.getElementById('original');	
 	outputDiv.style.backgroundColor = randomColor;
-	console.log("What color am I?" + randomColor);
+}
+
+//create divs for each color
+function createOptions(colors) {
+	for ( i = 1; i < colors.length; i += 1 ) {
+		//create option div
+		option = document.createElement("div");
+		option.className = "piece-style";
+
+		//hook into markup
+		var outputOption = document.getElementById('options');
+		outputOption.appendChild(option);
+
+		//assign style to container div
+		var containerWidth = i * 210;
+		outputOption.style.width = containerWidth + "px";
+
+		//assign styles to option divs
+		option.style.float = "left";
+		option.style.margin = ".125rem";
+		option.style.backgroundColor = colors[i];
+
+	}
 }
 
 
@@ -97,6 +119,7 @@ function createDiv() {
 var randomColor = makeRandomColor();
 colors = makeColors();
 setPieceColor(randomColor);
+createOptions(colors);
 
 
 
