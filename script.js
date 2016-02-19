@@ -52,7 +52,7 @@ function createOptionDiv() {
 }
 
 //ask user for guess
-function guess() {
+window.onload = function guess() {
 	var correctCounter = 0;
 	var incorrectCounter = 0;
 
@@ -72,17 +72,18 @@ function guess() {
 		correctCounter += 1;
 		viewScore(correctCounter);
 	}
+	viewScore(correctCounter, incorrectCounter);
 }
 
 //display results
-function viewScore(correctCounter) {
+function viewScore(correctCounter, incorrectCounter) {
 	//create results message
-	var message = "<p>Thanks for playing! You got " + correctCounter + " correct.</p>";
+	var message = "<p>Thanks for playing! You got " + correctCounter + " correct and " + incorrectCounter + " incorrect.</p>";
 
 	//hook into markup
 	var outputDiv = document.getElementById("results");
 	outputDiv.innerHTML = message;
-	
+
 }
 
 
