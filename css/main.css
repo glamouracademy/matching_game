@@ -15,8 +15,10 @@ body {
 	padding: 2rem;
 }
 
-footer {
+footer,
+#results {
 	clear: left;
+	padding-top: 2%;
 }
 
 
@@ -42,6 +44,5 @@ p {
 /* footer */
 
 footer {
-	padding-top: 2%;
 	font-size: .75em;
 }

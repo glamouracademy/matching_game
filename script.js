@@ -70,8 +70,21 @@ function guess() {
 		incorrectCounter += 1;
 	} else {
 		correctCounter += 1;
+		viewScore(correctCounter);
 	}
 }
+
+//display results
+function viewScore(correctCounter) {
+	//create results message
+	var message = "<p>Thanks for playing! You got " + correctCounter + " correct.</p>";
+
+	//hook into markup
+	var outputDiv = document.getElementById("results");
+	outputDiv.innerHTML = message;
+	
+}
+
 
 
 
