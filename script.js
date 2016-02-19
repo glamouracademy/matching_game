@@ -1,8 +1,3 @@
-var answer;
-var correctCounter = 0;
-var incorrectCounter = 0;
-
-
 //make a random color
 function makeRandomColor() {
 	var red = Math.floor(Math.random() * 256 );
@@ -56,6 +51,28 @@ function createOptionDiv() {
 		return option;
 }
 
+//ask user for guess
+function guess() {
+	var correctCounter = 0;
+	var incorrectCounter = 0;
+
+	//user guess
+	var answer = prompt("Do any of the following match the colour above? Type Y or N.");
+	answer = answer.toUpperCase();
+
+	//create an options array
+	colors.shift();
+
+	//conditional to check user guess
+	if ((colors.indexOf(randomColor) === -1) && answer === 'Y') {
+		incorrectCounter += 1;
+	} else if ((colors.includes(randomColor)) && answer == 'N') {
+		incorrectCounter += 1;
+	} else {
+		correctCounter += 1;
+	}
+}
+
 
 
 
@@ -96,6 +113,7 @@ var randomColor = makeRandomColor();
 colors = makeColors();
 setPieceColor(randomColor);
 createOptions(colors);
+guess(colors);
 
 
 
